@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 13</title>
+</head>
+<body>
+
+<script>
+  const calculateDniLetter = (dni) => {
+    const dniNumber = parseInt(dni, 10);
+
+    if (isNaN(dniNumber) || dniNumber <= 0 || dniNumber > 99999999) {
+      return "DNI Erróneo";
+    }
+
+    const letters = "TRWAGMYFPDXBNJZSQVHLCKE";
+    const letterIndex = dniNumber % 23;
+
+    return letters.charAt(letterIndex);
+  };
+
+  // Llamada a la función
+  console.log(calculateDniLetter("12345678"));
+</script>
+
+</body>
+</html>
